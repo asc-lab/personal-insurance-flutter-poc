@@ -10,7 +10,6 @@ class CommonData {
   BuildContext context;
 
   Future<CommonData> initialize() async {
-
     var srv = await DictionariesService().get();
 
     this.dicts = srv.dictionaries;

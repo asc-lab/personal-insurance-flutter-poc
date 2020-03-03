@@ -11,15 +11,11 @@ class DictionariesService {
 
   Future<DictionariesService> get() async {
     final response = await http.get(Helper.apiURL + 'getDicts');
+
     if (response.statusCode == 200) {
       // If the call to the server was successful, parse the JSON
       Map<String, dynamic> content = json.decode(response.body);
-      this.dictionaries = content.map((k, v) => MapEntry(
-          k,
-          v
-              .map<DictEntryDto>(
-                  (entry) => DictEntryDto.fromJson(entry))
-              .toList()));
+      this.dictionaries = content.map((k, v) => MapEntry(k, v.map<DictEntryDto>((entry) => DictEntryDto.fromJson(entry)).toList()));
       this._setMapsForDicts();
 
       return this;
@@ -29,8 +25,7 @@ class DictionariesService {
   }
 
   void _setMapsForDicts() {
-    this.maps = this.dictionaries.map((k, v) => MapEntry(
-        k, Map.fromIterable(v, key: (e) => e.code, value: (e) => e.name)));
+    this.maps = this.dictionaries.map((k, v) => MapEntry(k, Map.fromIterable(v, key: (e) => e.code, value: (e) => e.name)));
   }
 }
 

@@ -69,13 +69,12 @@ class _NewPolicyYouState extends State<NewPolicyYou> {
                   onSaved: (val) => setState(() {
                         processData.owner.sex = val;
                       }),
+                  onChanged: (val) => {},
                   decoration: InputDecoration(labelText: 'Sex*'),
-                  items:
-                      Helper.toDropdownItems(commonData.dicts[DictCode.SEX]))),
+                  items: Helper.toDropdownItems(commonData.dicts[DictCode.SEX]))),
               Helper.padding(FlatButton(
                 textTheme: ButtonTextTheme.normal,
-                child: Text('Use my profile data',
-                    style: Theme.of(context).textTheme.button),
+                child: Text('Use my profile data', style: Theme.of(context).textTheme.button),
                 onPressed: () => setState(() {
                   processData.setOwnerFromAccount();
                   this._formKey.currentState.reset();

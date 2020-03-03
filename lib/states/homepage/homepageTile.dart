@@ -26,40 +26,34 @@ class _HomepageTileState extends State<HomepageTile> {
           });
         },
         child: Helper.bigPaddingNoBottom(Card(
-            color: _isPolicyExpired()
-                ? theme.chipTheme.disabledColor
-                : theme.cardTheme.color,
+            color: _isPolicyExpired() ? theme.chipTheme.disabledColor : theme.cardTheme.color,
             borderOnForeground: true,
-            child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Padding(
-                    child: Icon(
-                      Helper.productTypeIcon(_policy.type),
-                      color: theme.textTheme.body1.color,
-                    ),
-                    padding: EdgeInsets.all(10),
-                  ),
-                  Expanded(
-                      child: Padding(
-                          padding: EdgeInsets.only(top: 15, bottom: 15),
-                          child: AnimatedCrossFade(
-                            duration: Duration(milliseconds: 300),
-                            firstChild: _buildMiniTile(),
-                            secondChild: _buildMaxiTile(),
-                            crossFadeState: !_expanded
-                                ? CrossFadeState.showFirst
-                                : CrossFadeState.showSecond,
-                            alignment: Alignment.topLeft,
-                          ))),
-                  Padding(
-                    child: Icon(
-                      _expanded ? Icons.arrow_drop_up : Icons.arrow_drop_down,
-                      color: theme.textTheme.body1.color,
-                    ),
-                    padding: EdgeInsets.all(10),
-                  ),
-                ]))));
+            child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
+              Padding(
+                child: Icon(
+                  Helper.productTypeIcon(_policy.type),
+                  color: theme.textTheme.body1.color,
+                ),
+                padding: EdgeInsets.all(10),
+              ),
+              Expanded(
+                  child: Padding(
+                      padding: EdgeInsets.only(top: 15, bottom: 15),
+                      child: AnimatedCrossFade(
+                        duration: Duration(milliseconds: 300),
+                        firstChild: _buildMiniTile(),
+                        secondChild: _buildMaxiTile(),
+                        crossFadeState: !_expanded ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+                        alignment: Alignment.topLeft,
+                      ))),
+              Padding(
+                child: Icon(
+                  _expanded ? Icons.arrow_drop_up : Icons.arrow_drop_down,
+                  color: theme.textTheme.body1.color,
+                ),
+                padding: EdgeInsets.all(10),
+              ),
+            ]))));
   }
 
   Widget _buildMiniTile() {
@@ -72,13 +66,10 @@ class _HomepageTileState extends State<HomepageTile> {
       Row(
         children: <Widget>[
           Padding(child: Text(_policy.number), padding: EdgeInsets.all(5)),
-          Helper.padding(Text(Helper.toDateString(_policy.validFrom),
-              style: TextStyle(fontWeight: _getFontWeight(_policy.validFrom)))),
+          Helper.padding(Text(Helper.toDateString(_policy.validFrom), style: TextStyle(fontWeight: _getFontWeight(_policy.validFrom)))),
           Helper.padding(Text(
             Helper.toDateString(_policy.validTo),
-            style: TextStyle(
-                color: _getColor(),
-                fontWeight: _getFontWeight(_policy.validTo)),
+            style: TextStyle(color: _getColor(), fontWeight: _getFontWeight(_policy.validTo)),
           )),
         ],
         mainAxisAlignment: MainAxisAlignment.center,
@@ -130,8 +121,7 @@ class _HomepageTileState extends State<HomepageTile> {
       textAlign: TextAlign.left,
     ))));
 
-    _policy.covers.forEach((coverCode) => children.add(Helper.left(
-        Helper.padding(Text(commonData.maps[DictCode.COVER][coverCode])))));
+    _policy.covers.forEach((coverCode) => children.add(Helper.left(Helper.padding(Text(commonData.maps[DictCode.COVER][coverCode])))));
 
     if (_isPolicyNearExpiry() && !_isPolicyExpired()) {
       children.add(Helper.padding(Row(
@@ -142,9 +132,7 @@ class _HomepageTileState extends State<HomepageTile> {
           )),
           Expanded(
               child: Text(
-            'Nearing end of cover (' +
-                Helper.toDateString(_policy.validTo) +
-                ')',
+            'Nearing end of cover (' + Helper.toDateString(_policy.validTo) + ')',
             style: TextStyle(color: Theme.of(_context).errorColor),
             textAlign: TextAlign.center,
           )),
@@ -165,6 +153,7 @@ class _HomepageTileState extends State<HomepageTile> {
 class HomepageTile extends StatefulWidget {
   HomepageTile({Key key, this.policy}) : super(key: key);
   final PolicyDto policy;
+
   @override
   _HomepageTileState createState() {
     return _HomepageTileState(this.policy);

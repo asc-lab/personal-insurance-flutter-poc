@@ -24,9 +24,7 @@ class _NewPolicyTypeState extends State<NewPolicyType> {
               return Step1Builder.getStep();
             } else {
               if (snapshot.hasError) {
-                return Center(
-                    child: Text('ERROR!!!',
-                        style: TextStyle(color: Theme.of(context).errorColor)));
+                return Center(child: Text('ERROR!!!', style: TextStyle(color: Theme.of(context).errorColor)));
               } else {
                 return Center(
                   child: CircularProgressIndicator(),
@@ -41,8 +39,7 @@ class _NewPolicyTypeState extends State<NewPolicyType> {
 class Step1Builder {
   static Widget getStep() {
     List<Widget> pt = [];
-    commonData.dicts[DictCode.PRODUCT_TYPE]
-        .forEach((pc) => pt.add(_prodType(pc)));
+    commonData.dicts[DictCode.PRODUCT_TYPE].forEach((pc) => pt.add(_prodType(pc)));
 
     return Scaffold(
         body: Column(children: <Widget>[

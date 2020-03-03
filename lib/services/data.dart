@@ -14,9 +14,7 @@ class DataService {
     if (response.statusCode == 200) {
       // If the call to the server was successful, parse the JSON
       List<dynamic> content = json.decode(response.body)['content'];
-      return content
-          .map((productJson) => ProductDto.fromJson(productJson))
-          .toList();
+      return content.map((productJson) => ProductDto.fromJson(productJson)).toList();
     } else {
       // If that call was not successful, throw an error.
       throw Exception('Failed to load account info');
@@ -40,9 +38,7 @@ class DataService {
     if (response.statusCode == 200) {
       // If the call to the server was successful, parse the JSON
       List<dynamic> content = json.decode(response.body)['content'];
-      return content
-          .map((policyJson) => PolicyDto.fromJson(policyJson))
-          .toList();
+      return content.map((policyJson) => PolicyDto.fromJson(policyJson)).toList();
     } else {
       // If that call was not successful, throw an error.
       throw Exception('Failed to load policies');

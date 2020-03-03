@@ -15,11 +15,7 @@ class DictEntryDto {
 
   @override
   bool operator ==(Object other) =>
-  identical(this, other) ||
-  other is DictEntryDto &&
-  runtimeType == other.runtimeType &&
-  code == other.code &&
-  name == other.name;
+      identical(this, other) || other is DictEntryDto && runtimeType == other.runtimeType && code == other.code && name == other.name;
 
   @override
   int get hashCode => code.hashCode ^ name.hashCode;

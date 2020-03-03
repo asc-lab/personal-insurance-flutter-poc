@@ -7,10 +7,7 @@ part of 'accountInfo.dart';
 // **************************************************************************
 
 AccountInfoDto _$AccountInfoDtoFromJson(Map<String, dynamic> json) {
-  return AccountInfoDto(json['owner'] == null
-      ? null
-      : PersonDto.fromJson(json['owner'] as Map<String, dynamic>));
+  return AccountInfoDto(json['owner'] == null ? null : PersonDto.fromJson(json['owner'] as Map<String, dynamic>));
 }
 
-Map<String, dynamic> _$AccountInfoDtoToJson(AccountInfoDto instance) =>
-    <String, dynamic>{'owner': instance.owner};
+Map<String, dynamic> _$AccountInfoDtoToJson(AccountInfoDto instance) => <String, dynamic>{'owner': instance.owner};

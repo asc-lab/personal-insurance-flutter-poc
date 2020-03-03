@@ -14,9 +14,7 @@ class _NewPolicySubjectState extends State<NewPolicySubject> {
       appBar: Helper.wizardAppBar(widget.title),
       backgroundColor: Theme.of(context).canvasColor,
       body: Column(children: <Widget>[
-        Flexible(
-            child: Form(
-                key: _formKey, child: ReptileObject(reptile: processData.pet, parentFormKey: this._formKey))),
+        Flexible(child: Form(key: _formKey, child: ReptileObject(reptile: processData.pet, parentFormKey: this._formKey))),
       ]),
       floatingActionButton: Builder(
           builder: (ctx) => FloatingActionButton(
@@ -33,8 +31,7 @@ class Step5Builder {
   static void nextStep(GlobalKey<FormState> fk, ScaffoldState ss) {
     if (fk.currentState.validate()) {
       fk.currentState.save();
-      Navigator.pushNamedAndRemoveUntil(
-          commonData.context, '/', (Route<dynamic> route) => false);
+      Navigator.pushNamedAndRemoveUntil(commonData.context, '/', (Route<dynamic> route) => false);
     }
   }
 }

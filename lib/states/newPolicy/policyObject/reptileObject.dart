@@ -37,8 +37,7 @@ class _ReptileObjectState extends State<ReptileObject> {
           TextFormField(
               controller: dobCtrl,
               onTap: () => _setBirthDate(context).then((d) {
-                    dobCtrl.text =
-                        Helper.toDateString(this._reptile.dateOfBirth);
+                    dobCtrl.text = Helper.toDateString(this._reptile.dateOfBirth);
                   }),
               decoration: InputDecoration(labelText: 'Birth / hatch date'),
               onSaved: (String val) {}),
@@ -51,8 +50,7 @@ class _ReptileObjectState extends State<ReptileObject> {
               });
             },
             decoration: InputDecoration(labelText: 'Species'),
-            items: Helper.toDropdownItems(
-                commonData.dicts[DictCode.REPTILE_SPECIES]))),
+            items: Helper.toDropdownItems(commonData.dicts[DictCode.REPTILE_SPECIES]))),
         Helper.padding(Row(children: [
           Flexible(flex: 1, child: Text('Has a tail: ')),
           Flexible(
@@ -79,10 +77,7 @@ class _ReptileObjectState extends State<ReptileObject> {
 
   Future<Null> _setBirthDate(BuildContext context) async {
     final DateTime picked = await showDatePicker(
-        context: context,
-        initialDate: (this._reptile.dateOfBirth ?? DateTime.now()),
-        firstDate: DateTime(2000, 8),
-        lastDate: DateTime.now());
+        context: context, initialDate: (this._reptile.dateOfBirth ?? DateTime.now()), firstDate: DateTime(2000, 8), lastDate: DateTime.now());
     if (picked != null && picked != this._reptile.dateOfBirth) {
       setState(() => this._reptile.dateOfBirth = picked);
     }
@@ -93,6 +88,7 @@ class ReptileObject extends StatefulWidget {
   ReptileObject({Key key, this.reptile, this.parentFormKey}) : super(key: key);
   final ReptileDto reptile;
   final GlobalKey<FormState> parentFormKey;
+
   @override
   _ReptileObjectState createState() {
     return _ReptileObjectState(this.reptile, this.parentFormKey);

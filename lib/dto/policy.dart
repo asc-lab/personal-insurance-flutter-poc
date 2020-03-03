@@ -13,8 +13,7 @@ class PolicyDto {
   final Iterable<String> covers;
   final String type;
 
-  factory PolicyDto.fromJson(Map<String, dynamic> json) =>
-      _$PolicyDtoFromJson(json);
+  factory PolicyDto.fromJson(Map<String, dynamic> json) => _$PolicyDtoFromJson(json);
 
   Map<String, dynamic> toJson() => _$PolicyDtoToJson(this);
 }

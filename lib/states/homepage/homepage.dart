@@ -6,6 +6,7 @@ import 'package:wizard_app/states/homepage/homepageTile.dart';
 
 class MyHomePage extends StatelessWidget {
   final Future<List<PolicyDto>> _policies;
+
   MyHomePage(this._policies);
 
   void _newPolicy() {
@@ -26,23 +27,16 @@ class MyHomePage extends StatelessWidget {
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
               return ListView.builder(
-                itemCount: snapshot.data.length,
-                itemBuilder: (BuildContext ctxt, int index) => HomepageTile(policy: snapshot.data[index])
-              );
+                  itemCount: snapshot.data.length, itemBuilder: (BuildContext ctxt, int index) => HomepageTile(policy: snapshot.data[index]));
             } else {
-              return Center(
-                  child: Column(children: [
-                Helper.bigPaddingNoBottom(Text('Loading...')),
-                Helper.bigPaddingNoBottom(CircularProgressIndicator())
-              ]));
+              return Center(child: Column(children: [Helper.bigPaddingNoBottom(Text('Loading...')), Helper.bigPaddingNoBottom(CircularProgressIndicator())]));
             }
           }),
       floatingActionButton: FloatingActionButton(
         onPressed: _newPolicy,
         tooltip: 'Register new policy',
         child: Icon(Icons.add_shopping_cart),
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(15.0))),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15.0))),
       ),
     );
   }

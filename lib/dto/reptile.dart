@@ -13,17 +13,14 @@ class ReptileDto extends PetDto {
     this.dateOfBirth = DateTime.now();
   }
 
-  ReptileDto(name, nickname, this.dateOfBirth, this.species, this.hasTail,
-      this.numberOfLegs)
-      : super(name, nickname, dateOfBirth);
+  ReptileDto(name, nickname, this.dateOfBirth, this.species, this.hasTail, this.numberOfLegs) : super(name, nickname, dateOfBirth);
 
   DateTime dateOfBirth;
   String species;
   bool hasTail;
   int numberOfLegs;
 
-  factory ReptileDto.fromJson(Map<String, dynamic> json) =>
-      _$ReptileDtoFromJson(json);
+  factory ReptileDto.fromJson(Map<String, dynamic> json) => _$ReptileDtoFromJson(json);
 
   Map<String, dynamic> toJson() => _$ReptileDtoToJson(this);
 }
