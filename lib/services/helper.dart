@@ -5,31 +5,26 @@ import 'package:wizard_app/dto/dictionary.dart';
 
 class Helper {
   static String apiURL = "http://10.0.2.2:3000/personalInsuranceFlutter/";
+  // static String apiURL = "http://localhost:3000/personalInsuranceFlutter/";
 
   static Widget wizardAppBar(String title) {
     var titleElements = List<Widget>();
     if (processData.type != null) {
-      titleElements.add(
-          Helper.padding(Icon(Helper.productTypeIcon(processData.type.code))));
+      titleElements.add(Helper.padding(Icon(Helper.productTypeIcon(processData.type.code))));
     }
     titleElements.add(Flexible(child: Text(title, softWrap: true)));
-    return AppBar(
-        title: Row(children: titleElements),
-        titleSpacing: 0.0,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.cancel),
-            onPressed: processData.cancelProcess,
-          )
-        ]);
+    return AppBar(title: Row(children: titleElements), titleSpacing: 0.0, actions: [
+      IconButton(
+        icon: Icon(Icons.cancel),
+        onPressed: processData.cancelProcess,
+      )
+    ]);
   }
 
-  static List<DropdownMenuItem<String>> toDropdownItems(
-      List<DictEntryDto> dict) {
+  static List<DropdownMenuItem<String>> toDropdownItems(List<DictEntryDto> dict) {
     List<DropdownMenuItem<String>> entries = List<DropdownMenuItem<String>>();
 
-    DropdownMenuItem<String> empty =
-        toDropdownItem(DictEntryDto("", "- none -"));
+    DropdownMenuItem<String> empty = toDropdownItem(DictEntryDto("", "- none -"));
     entries.add(empty);
     dict.forEach((entry) => entries.add(toDropdownItem(entry)));
 
