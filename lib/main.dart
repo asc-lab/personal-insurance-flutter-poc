@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:wizard_app/services/commonData.dart';
 import 'package:wizard_app/services/data.dart';
@@ -10,13 +12,11 @@ import 'package:wizard_app/states/newPolicy/4_newPolicyYou.dart';
 import 'package:wizard_app/states/newPolicy/5_newPolicySubject.dart';
 
 void main() {
-  commonData.initialize().then((data) {
-    runApp(MyApp());
-  });
+  runApp(MainApp());
 }
 
-class MyApp extends StatelessWidget {
-  MyApp();
+class WizardApp extends StatelessWidget {
+  WizardApp();
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         '/newPolicyYou': (context) => NewPolicyYou(),
         '/newPolicySubject': (context) => NewPolicySubject(),
       },
-      title: 'Flutter Demo',
+      title: 'Wizard Demo',
       theme: ThemeData(
           primarySwatch: Colors.lightBlue,
           // Custom swatch:
@@ -58,5 +58,66 @@ class MyApp extends StatelessWidget {
           // ),
           accentColor: Colors.lightBlueAccent),
     );
+  }
+}
+
+class MainApp extends StatelessWidget {
+  MainApp();
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: 'Wizard App',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: MainPage(title: "Wizard App"));
+  }
+}
+
+class MainPage extends StatefulWidget {
+  MainPage({Key key, this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  MainPageState createState() => MainPageState();
+}
+
+class MainPageState extends State<MainPage> {
+  MainPageState() {
+    commonData.initialize().then((data) {
+      navigateTo(WizardApp());
+    }).catchError((error) {
+      updateLabel(error.toString());
+    });
+  }
+
+  String label = "Loading...";
+
+  void updateLabel(String text) {
+    setState(() {
+      label = text + "\n\nPlease ensure local API server is running at localhost:3000";
+    });
+  }
+
+  void navigateTo(Widget target) {
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) => target));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(widget.title),
+        ),
+        body: SingleChildScrollView(
+          child: Container(
+            padding: EdgeInsets.all(20),
+            child: Center(
+              child: Text(label, style: Theme.of(context).textTheme.title))
+            )
+        )
+      );
   }
 }
