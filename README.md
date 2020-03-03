@@ -37,13 +37,12 @@ If the local server is not running, application will simply fail with a blank sc
 
 ## Android
 
-- Ensure the emulator can access `localhost` via `10.0.2.2` in Dart code. 
-  
-  - `apiURL = "http://10.0.2.2:3000/personalInsuranceFlutter/";`
+- `apiURL = "http://10.0.2.2:3000/personalInsuranceFlutter/";`
+
+  - Ensure the emulator can access `localhost` via `10.0.2.2` in Dart code.   
   - Special alias to your host loopback interface (i.e., 127.0.0.1 on your development machine) 
   - https://developer.android.com/studio/run/emulator-networking.html
   
-
 
 
 ## iOS
@@ -74,7 +73,7 @@ Cannot start load of Task <xx-xx>.<x> since it does not conform to ATS policy.
 
 ## Author
 
-Wojtek Suwala - https://github.com/wojteksuwala
+Wojciech Kuroczycki, Lead Developer
 
 Altkom Software & Consulting - https://github.com/asc-lab
 
