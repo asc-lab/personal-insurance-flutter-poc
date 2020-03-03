@@ -2,14 +2,14 @@
 
 An example Flutter project with a lot of shenanigans commonly encountered in business apps.
 
-
+<br/>
 
 
 ## Blog Post
 
 https://altkomsoftware.pl/blog/flutter-dart-quickly-build-mobile-app-without-losing-much-hair/
 
-
+<br/>
 
 # Dependency
 
@@ -22,7 +22,7 @@ If the local server is not running, application will simply fail with a blank sc
   - https://github.com/mockoon/mockoon
     - e.g. MacOS Install: `brew cask install mockoon`
 
-
+<br/>
 
 # Running
 
@@ -33,7 +33,7 @@ If the local server is not running, application will simply fail with a blank sc
 - Ensure the `apiURL` static field in `lib/services/Helper` class is correctly set
   - Localhost setting for `apiURL` for The Android and iOS will differ, see below. 
 
-
+<br/>
 
 ## Android
 
@@ -44,6 +44,7 @@ If the local server is not running, application will simply fail with a blank sc
   - https://developer.android.com/studio/run/emulator-networking.html
   
 
+<br/>
 
 ## iOS
 
@@ -69,7 +70,7 @@ Otherwise this error is going to happen.
 Cannot start load of Task <xx-xx>.<x> since it does not conform to ATS policy.
 ```
 
-
+<br/>
 
 ## Author
 
@@ -77,7 +78,7 @@ Wojciech Kuroczycki, Lead Developer
 
 Altkom Software & Consulting - https://github.com/asc-lab
 
-
+<br/>
 
 ## License
 
