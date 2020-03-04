@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:wizard_app/services/processData.dart';
 import 'package:wizard_app/dto/dictionary.dart';
+import 'dart:io' show Platform;
 
 class Helper {
-  static String apiURL = "http://10.0.2.2:3000/personalInsuranceFlutter/";
-  // static String apiURL = "http://localhost:3000/personalInsuranceFlutter/";
+  // https://api.flutter.dev/flutter/dart-io/Platform-class.html
+  static String apiURL = Platform.isAndroid ?
+      "http://10.0.2.2:3000/personalInsuranceFlutter/" :
+      "http://localhost:3000/personalInsuranceFlutter/";
 
   static Widget wizardAppBar(String title) {
     var titleElements = List<Widget>();
