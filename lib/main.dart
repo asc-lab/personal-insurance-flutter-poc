@@ -1,8 +1,7 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:wizard_app/services/commonData.dart';
 import 'package:wizard_app/services/data.dart';
+import 'package:wizard_app/services/helper.dart';
 import 'package:wizard_app/services/processData.dart';
 import 'package:wizard_app/states/homepage/homepage.dart';
 import 'package:wizard_app/states/newPolicy/1_newPolicyType.dart';
@@ -11,9 +10,7 @@ import 'package:wizard_app/states/newPolicy/3_newPolicyCovers.dart';
 import 'package:wizard_app/states/newPolicy/4_newPolicyYou.dart';
 import 'package:wizard_app/states/newPolicy/5_newPolicySubject.dart';
 
-void main() {
-  runApp(MainApp());
-}
+void main() => runApp(MainApp());
 
 class WizardApp extends StatelessWidget {
   WizardApp();
@@ -69,7 +66,8 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
         title: 'Wizard App',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+            primarySwatch: Colors.lightBlue,
+            accentColor: Colors.lightBlueAccent
         ),
         home: MainPage(title: "Wizard App"));
   }
@@ -93,7 +91,7 @@ class MainPageState extends State<MainPage> {
     });
   }
 
-  String label = "Loading...";
+  String label = "Initializing...";
 
   void updateLabel(String text) {
     setState(() {
@@ -111,13 +109,14 @@ class MainPageState extends State<MainPage> {
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        body: SingleChildScrollView(
-          child: Container(
-            padding: EdgeInsets.all(20),
-            child: Center(
-              child: Text(label, style: Theme.of(context).textTheme.title))
+        backgroundColor: Theme.of(context).backgroundColor,
+        body: Center(
+            child: Column(
+                children: [
+                  Helper.bigPaddingNoBottom(Text(label)),
+                ]
             )
         )
-      );
+    );
   }
 }
