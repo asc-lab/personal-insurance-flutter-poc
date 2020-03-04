@@ -2,7 +2,7 @@
 
 A Flutter project example covering concerns commonly encountered in business apps.
 
-
+<br>
 
 
 <table><tr>
@@ -45,7 +45,7 @@ The application attempts to access a running Mockoon Mock API at startup.
   - Localhost setting for `apiURL` for The Android and iOS will differ, see below.
   - The helper will auto-adapt the `apiURL` based on `Platform`.  
 
-
+<br>
 
 If the local server is not running, application will show an error on startup.
 
