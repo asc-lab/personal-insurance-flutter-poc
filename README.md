@@ -4,12 +4,12 @@ A Flutter project example covering concerns commonly encountered in business app
 
 <br>
 
-
 <table><tr>
 <td><img src="images/sim1.png"></td>
 <td><img src="images/sim2.png"></td>
 <td><img src="images/sim3.png"></td>
 </tr></table>
+
 <br>
 
 # Blog Post
@@ -29,10 +29,10 @@ The application attempts to access a running Mockoon Mock API at startup.
     - e.g. MacOS Install: `brew cask install mockoon`
 
 
-
 <table><tr>
 <td><img src="images/mockoon.png"></td>
 </tr></table>
+
 <br>
 
 # Running
@@ -53,6 +53,7 @@ If the local server is not running, application will show an error on startup.
 <td><img src="images/error_ios.png"></td>
 <td><img src="images/error_droid.png"></td>
 </tr></table>
+
 <br>
 
 ## Android
@@ -88,18 +89,3 @@ Otherwise this error is going to happen.
 ```
 Cannot start load of Task <xx-xx>.<x> since it does not conform to ATS policy.
 ```
-
-<br>
-
-# Author
-
-[Wojciech Kuroczycki](mailto:wojciech.kuroczycki@altkomsoftware.pl), Lead Developer
-
-[Altkom Software & Consulting](https://github.com/asc-lab)
-
-<br>
-
-# License
-
-The MIT License (MIT)
-
