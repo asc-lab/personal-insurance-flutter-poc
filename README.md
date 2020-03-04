@@ -1,50 +1,69 @@
-# Personal Insurance Flutter PoC
+# Flutter PoC: Personal Insurance
 
-An example Flutter project with a lot of shenanigans commonly encountered in business apps.
-
-<br/>
+A Flutter project example covering concerns commonly encountered in business apps.
 
 
-## Blog Post
+
+
+<table><tr>
+<td><img src="images/sim1.png"></td>
+<td><img src="images/sim2.png"></td>
+<td><img src="images/sim3.png"></td>
+</tr></table>
+<br>
+
+# Blog Post
 
 https://altkomsoftware.pl/blog/flutter-dart-quickly-build-mobile-app-without-losing-much-hair/
 
-<br/>
+<br>
 
 # Dependency
 
 The application attempts to access a running Mockoon Mock API at startup. 
 
-If the local server is not running, application will simply fail with a blank screen. 
-
 - Mockoon
   - https://mockoon.com/
   - https://github.com/mockoon/mockoon
+    
     - e.g. MacOS Install: `brew cask install mockoon`
 
-<br/>
+
+
+<table><tr>
+<td><img src="images/mockoon.png"></td>
+</tr></table>
+<br>
 
 # Running
 
-- Ensure Mockoon Environment is configured with `mockoon_environment` - (import JSON into Mockoon UI). 
-- Ensure Mockoon APIs are running locally
+- Ensure Mockoon Environment is configured with `mockoon_environment` - (import JSON into Mockoon). 
+- Ensure Mockoon is running locally
 - Ensure API routes are accessible on `0.0.0.0` i.e. `localhost`, `127.0.0.1`
-- - e.g. http://localhost:3000/personalInsuranceFlutter/getDicts
+  - e.g. http://localhost:3000/personalInsuranceFlutter/getDicts
 - Ensure the `apiURL` static field in `lib/services/Helper` class is correctly set
-  - Localhost setting for `apiURL` for The Android and iOS will differ, see below. 
+  - Localhost setting for `apiURL` for The Android and iOS will differ, see below.
+  - The helper will auto-adapt the `apiURL` based on `Platform`.  
 
-<br/>
+
+
+If the local server is not running, application will show an error on startup.
+
+<table><tr>
+<td><img src="images/error_ios.png"></td>
+<td><img src="images/error_droid.png"></td>
+</tr></table>
+<br>
 
 ## Android
 
 - `apiURL = "http://10.0.2.2:3000/personalInsuranceFlutter/";`
-
-  - Ensure the emulator can access `localhost` via `10.0.2.2` in Dart code.   
+- Ensure the emulator can access `localhost` via `10.0.2.2` in Dart code.   
   - Special alias to your host loopback interface (i.e., 127.0.0.1 on your development machine) 
   - https://developer.android.com/studio/run/emulator-networking.html
   
 
-<br/>
+<br>
 
 ## iOS
 
@@ -70,16 +89,17 @@ Otherwise this error is going to happen.
 Cannot start load of Task <xx-xx>.<x> since it does not conform to ATS policy.
 ```
 
-<br/>
+<br>
 
-## Author
+# Author
 
-Wojciech Kuroczycki, Lead Developer
+[Wojciech Kuroczycki](mailto:wojciech.kuroczycki@altkomsoftware.pl), Lead Developer
 
-Altkom Software & Consulting - https://github.com/asc-lab
+[Altkom Software & Consulting](https://github.com/asc-lab)
 
-<br/>
+<br>
 
-## License
+# License
 
 The MIT License (MIT)
+
