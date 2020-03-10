@@ -10,21 +10,11 @@ A Flutter project example covering concerns commonly encountered in business app
 <td><img src="images/sim3.png"></td>
 </tr></table>
 
-<br>
-
-# Blog Post
-
-https://altkomsoftware.pl/blog/flutter-dart-quickly-build-mobile-app-without-losing-much-hair/
-
-<br>
-
 ## Blog Post
 
 https://altkomsoftware.pl/blog/flutter-dart-quickly-build-mobile-app-without-losing-much-hair/
 
-
-
-# Dependecy
+# Dependency
 
 The application attempts to access a running Mockoon Mock API at startup. If the local server is not running, application will simply fail with a blank screen. 
 
