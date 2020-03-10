@@ -18,14 +18,19 @@ https://altkomsoftware.pl/blog/flutter-dart-quickly-build-mobile-app-without-los
 
 <br>
 
-# Dependency
+## Blog Post
 
-The application attempts to access a running Mockoon Mock API at startup. 
+https://altkomsoftware.pl/blog/flutter-dart-quickly-build-mobile-app-without-losing-much-hair/
+
+
+
+# Dependecy
+
+The application attempts to access a running Mockoon Mock API at startup. If the local server is not running, application will simply fail with a blank screen. 
 
 - Mockoon
   - https://mockoon.com/
   - https://github.com/mockoon/mockoon
-    
     - e.g. MacOS Install: `brew cask install mockoon`
 
 
@@ -60,9 +65,6 @@ If the local server is not running, application will show an error on startup.
 
 - `apiURL = "http://10.0.2.2:3000/personalInsuranceFlutter/";`
 - Ensure the emulator can access `localhost` via `10.0.2.2` in Dart code.   
-  - Special alias to your host loopback interface (i.e., 127.0.0.1 on your development machine) 
-  - https://developer.android.com/studio/run/emulator-networking.html
-  
 
 <br>
 
