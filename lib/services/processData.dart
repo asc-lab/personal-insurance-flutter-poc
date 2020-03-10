@@ -27,13 +27,12 @@ class ProcessData {
 
   void cancelProcess() {
     this.initialize();
-    Navigator.pushNamedAndRemoveUntil(
-        commonData.context, '/', (Route<dynamic> route) => false);
+    Navigator.pushNamedAndRemoveUntil(commonData.context, '/', (Route<dynamic> route) => false);
   }
 
   void applyProduct(ProductDto product) {
     this.product = product;
-    
+
     this.pet = ReptileDto.defaults();
   }
 

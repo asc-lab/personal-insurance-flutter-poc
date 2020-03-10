@@ -13,5 +13,3 @@ class CalculationResultDto {
 
   Map<String, dynamic> toJson() => _$CalculationResultDtoToJson(this);
 }
-
-

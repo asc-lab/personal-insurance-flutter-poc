@@ -18,5 +18,3 @@ class ProductDto {
 
   Map<String, dynamic> toJson() => _$ProductDtoToJson(this);
 }
-
-

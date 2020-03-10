@@ -9,10 +9,7 @@ class _NewPolicyProductState extends State<NewPolicyProduct> {
   @override
   Widget build(BuildContext context) {
     commonData.context = context;
-    return Scaffold(
-        appBar: Helper.wizardAppBar(widget.title),
-        backgroundColor: Theme.of(context).backgroundColor,
-        body: Step2Builder.getStep());
+    return Scaffold(appBar: Helper.wizardAppBar(widget.title), backgroundColor: Theme.of(context).backgroundColor, body: Step2Builder.getStep());
   }
 }
 

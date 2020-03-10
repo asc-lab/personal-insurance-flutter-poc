@@ -5,7 +5,7 @@ import 'package:wizard_app/dto/person.dart';
 part 'accountInfo.g.dart';
 
 @JsonSerializable()
-class AccountInfoDto{
+class AccountInfoDto {
   AccountInfoDto(this.owner);
 
   final PersonDto owner;
@@ -14,5 +14,3 @@ class AccountInfoDto{
 
   Map<String, dynamic> toJson() => _$AccountInfoDtoToJson(this);
 }
-
-

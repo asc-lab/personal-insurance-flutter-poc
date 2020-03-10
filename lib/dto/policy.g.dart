@@ -7,17 +7,8 @@ part of 'policy.dart';
 // **************************************************************************
 
 PolicyDto _$PolicyDtoFromJson(Map<String, dynamic> json) {
-  return PolicyDto(
-      json['number'] as String,
-      (json['rate'] as num)?.toDouble(),
-      json['validFrom'] == null
-          ? null
-          : DateTime.parse(json['validFrom'] as String),
-      json['validTo'] == null
-          ? null
-          : DateTime.parse(json['validTo'] as String),
-      (json['covers'] as List)?.map((e) => e as String),
-      json['type'] as String);
+  return PolicyDto(json['number'] as String, (json['rate'] as num)?.toDouble(), json['validFrom'] == null ? null : DateTime.parse(json['validFrom'] as String),
+      json['validTo'] == null ? null : DateTime.parse(json['validTo'] as String), (json['covers'] as List)?.map((e) => e as String), json['type'] as String);
 }
 
 Map<String, dynamic> _$PolicyDtoToJson(PolicyDto instance) => <String, dynamic>{

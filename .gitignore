@@ -68,3 +68,7 @@
 !**/ios/**/default.pbxuser
 !**/ios/**/default.perspectivev3
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+
+# Flutter Export Environment is a generated file; do not edit or check into version control.
+flutter_export_environment.sh
+Flutter.podspec

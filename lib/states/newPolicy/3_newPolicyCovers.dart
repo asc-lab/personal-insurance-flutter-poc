@@ -18,31 +18,27 @@ class _NewPolicyCoversState extends State<NewPolicyCovers> {
       _checked[cover.code] = processData.covers.contains(cover);
     });
     List<Widget> pt = [];
-    commonData.dicts[DictCode.COVER].forEach((cov) => pt.add(Helper.padding(
-        Container(
-            color: _checked[cov.code]
-                ? Theme.of(context).accentColor
-                : Theme.of(context).canvasColor,
-            child: CheckboxListTile(
-                title: Text(cov.name,
-                    style: TextStyle(fontWeight: FontWeight.bold)),
-                value: _checked[cov.code],
-                onChanged: (bool value) {
-                  setState(() {
-                    if (value) {
-                      processData.covers.add(cov);
-                    } else {
-                      processData.covers.remove(cov);
-                    }
-                    _calculating++;
-                    DataService.calculatePremium()
-                        .then((result) => setState(() {
-                              _premium = result.premium;
-                              _calculating--;
-                            }))
-                        .catchError((err) => _calculating--);
-                  });
-                })))));
+    commonData.dicts[DictCode.COVER].forEach((cov) => pt.add(Helper.padding(Container(
+        color: _checked[cov.code] ? Theme.of(context).accentColor : Theme.of(context).canvasColor,
+        child: CheckboxListTile(
+            title: Text(cov.name, style: TextStyle(fontWeight: FontWeight.bold)),
+            value: _checked[cov.code],
+            onChanged: (bool value) {
+              setState(() {
+                if (value) {
+                  processData.covers.add(cov);
+                } else {
+                  processData.covers.remove(cov);
+                }
+                _calculating++;
+                DataService.calculatePremium()
+                    .then((result) => setState(() {
+                          _premium = result.premium;
+                          _calculating--;
+                        }))
+                    .catchError((err) => _calculating--);
+              });
+            })))));
 
     return Scaffold(
       appBar: Helper.wizardAppBar(widget.title),
@@ -64,11 +60,7 @@ class _NewPolicyCoversState extends State<NewPolicyCovers> {
         color: Theme.of(context).accentColor,
         notchMargin: 10,
         child: Container(
-            child: Helper.bigPadding(Text(
-                'Premium: ' +
-                    ((_calculating > 0)
-                        ? 'calculating...'
-                        : (_premium > 0 ? _premium.toString() + ' PLN' : '-')),
+            child: Helper.bigPadding(Text('Premium: ' + ((_calculating > 0) ? 'calculating...' : (_premium > 0 ? _premium.toString() + ' PLN' : '-')),
                 style: Theme.of(context).textTheme.headline))),
       ),
     );
@@ -87,9 +79,7 @@ class Step3Builder {
         ),
         content: Text(
           'You need to pick at least 3 covers',
-          style: TextStyle(
-              color: Theme.of(commonData.context).errorColor,
-              fontWeight: FontWeight.bold),
+          style: TextStyle(color: Theme.of(commonData.context).errorColor, fontWeight: FontWeight.bold),
         ),
       ));
       return;
@@ -102,6 +92,7 @@ class Step3Builder {
 class NewPolicyCovers extends StatefulWidget {
   NewPolicyCovers({Key key}) : super(key: key);
   final String title = 'What should we cover?';
+
   @override
   _NewPolicyCoversState createState() => _NewPolicyCoversState();
 }

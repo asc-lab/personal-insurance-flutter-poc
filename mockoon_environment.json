@@ -1,0 +1,153 @@
+{
+    "source": "mockoon:1.7.0",
+    "data": [
+        {
+            "type": "environment",
+            "item": {
+                "uuid": "",
+                "name": "personalInsuranceFlutter",
+                "endpointPrefix": "personalInsuranceFlutter",
+                "latency": 1000,
+                "port": 3000,
+                "routes": [
+                    {
+                        "uuid": "",
+                        "documentation": "AccountInfoDto",
+                        "method": "get",
+                        "endpoint": "getAccountInfo",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "statusCode": "200",
+                                "latency": 0,
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "body": "{\n    \"content\": {\n        \"owner\": {\n            \"name\": \"Wojciech\",\n            \"surname\": \"Kuroczycki\",\n            \"sex\": \"M\",\n            \"email\": \"wojciech.kuroczycki@altkomsoftware.pl\",\n            \"shoe\": \"43\"\n        }\n    }\n}",
+                                "rules": [],
+                                "label": ""
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "List<ProductDto>",
+                        "method": "get",
+                        "endpoint": "getProducts",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "statusCode": "200",
+                                "latency": 0,
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "body": "{\n    \"content\":[\n        \n    {\n        \"code\": \"BIRB\",\n        \"name\": \"Avian\",\n        \"type\": \"PET\",\n        \"rate\": 250.0,\n        \"coverList\": [\"C001\",\"C004\",\"C005\"],\n        \"special\": false\n    },\n    {\n        \"code\": \"MAMM\",\n        \"name\": \"Mammal\",\n        \"type\": \"PET\",\n        \"rate\": 200.0,\n        \"coverList\": [\"C001\",\"C002\",\"C003\"],\n        \"special\": true\n    },\n    {\n        \"code\": \"REPT\",\n        \"name\": \"Reptile\",\n        \"type\": \"PET\",\n        \"rate\": 175.0,\n        \"coverList\": [\"C001\",\"C004\",\"C005\"],\n        \"special\": true\n    },\n    {\n        \"code\": \"AMPH\",\n        \"name\": \"Amphibian\",\n        \"type\": \"PET\",\n        \"rate\": 150.0,\n        \"coverList\": [\"C001\",\"C004\",\"C005\"],\n        \"special\": false\n    },\n    {\n        \"code\": \"FISH\",\n        \"name\": \"Fish\",\n        \"type\": \"PET\",\n        \"rate\": 100.0,\n        \"coverList\": [\"C001\",\"C004\",\"C005\"],\n        \"special\": false\n    },\n    {\n        \"code\": \"ARAC\",\n        \"name\": \"Arachnid\",\n        \"type\": \"PET\",\n        \"rate\": 100.0,\n        \"coverList\": [\"C001\",\"C004\",\"C005\"],\n        \"special\": false\n    } ,\n    {\n        \"code\": \"INSE\",\n        \"name\": \"Insect\",\n        \"type\": \"PET\",\n        \"rate\": 75.0,\n        \"coverList\": [\"C001\",\"C004\",\"C005\"],\n        \"special\": false\n    }  ,\n    {\n        \"code\": \"ROCK\",\n        \"name\": \"Rock\",\n        \"type\": \"PET\",\n        \"rate\": 60.0,\n        \"coverList\": [\"C001\",\"C004\",\"C005\"],\n        \"special\": false\n    } \n    ]\n}",
+                                "rules": [],
+                                "label": ""
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "",
+                        "method": "get",
+                        "endpoint": "getDicts",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "statusCode": "200",
+                                "latency": 0,
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "body": "{\r\n    \"COVER\": [\r\n        {\r\n            \"code\": \"C001\",\r\n            \"name\": \"Birds of prey\"\r\n        },\r\n        {\r\n            \"code\": \"C002\",\r\n            \"name\": \"Coyotes\"\r\n        },\r\n        {\r\n            \"code\": \"C003\",\r\n            \"name\": \"Crab people\"\r\n        },\r\n        {\r\n            \"code\": \"C004\",\r\n            \"name\": \"Bigger lizards\"\r\n        },\r\n        {\r\n            \"code\": \"C005\",\r\n            \"name\": \"Uncultured mushrooms\"\r\n        },\r\n        {\r\n            \"code\": \"C006\",\r\n            \"name\": \"Tail jettison\"\r\n        },\r\n        {\r\n            \"code\": \"C007\",\r\n            \"name\": \"Bad roaches\"\r\n        },\r\n        {\r\n            \"code\": \"C008\",\r\n            \"name\": \"Bad puns\"\r\n        },\r\n        {\r\n            \"code\": \"C009\",\r\n            \"name\": \"Peer pressure\"\r\n        },\r\n        {\r\n            \"code\": \"C010\",\r\n            \"name\": \"Meatloaf\"\r\n        },\r\n        {\r\n            \"code\": \"C011\",\r\n            \"name\": \"Cable biting\"\r\n        }\r\n\t],\r\n\t\"SEX\": [\r\n\t    {\r\n\t        \"code\": \"M\",\r\n\t        \"name\": \"Male\"\r\n\t    },\r\n\t    {\r\n\t        \"code\": \"F\",\r\n\t        \"name\": \"Female\"\r\n\t    },\r\n\t    {\r\n\t        \"code\": \"?\",\r\n\t        \"name\": \"Other\"\r\n\t    }\r\n\t    ],\r\n\t\"PRODUCT_TYPE\": [\r\n        {\r\n            \"code\": \"LIFE\",\r\n            \"name\": \"Life\"\r\n        },\r\n        {\r\n            \"code\": \"TRAVEL\",\r\n            \"name\": \"Travel\"\r\n        },\r\n        {\r\n            \"code\": \"MEDI\",\r\n            \"name\": \"Healthcare\"\r\n        },\r\n        {\r\n            \"code\": \"PET\",\r\n            \"name\": \"Pet\"\r\n        }\r\n\t],\r\n\t\"REPTILE_SPECIES\": [\r\n        {\r\n            \"code\": \"BD\",\r\n            \"name\": \"Bearded Dragon\"\r\n        },\r\n        {\r\n            \"code\": \"SNEK\",\r\n            \"name\": \"Long Snek\"\r\n        },\r\n        {\r\n            \"code\": \"MMG\",\r\n            \"name\": \"Mustacchioed Monaco Gecko\"\r\n        },\r\n        {\r\n            \"code\": \"DOGE\",\r\n            \"name\": \"Dog in a suit\"\r\n        }\r\n\t]\r\n}",
+                                "rules": [],
+                                "label": ""
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "List<PolicyDto>",
+                        "method": "get",
+                        "endpoint": "getPolicies",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "statusCode": "200",
+                                "latency": 0,
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "body": "{\n    \"content\": [\n        {\n            \"number\": \"P0001AZN\",\n            \"rate\": 200.0,\n            \"validFrom\": \"2018-02-01\",\n            \"validTo\": \"2019-12-07\",\n            \"covers\": [\"C001\",\"C002\", \"C003\"],\n            \"type\": \"TRAVEL\"\n        },\n        \n        {\n            \"number\": \"P0002AZZ\",\n            \"rate\": 200.0,\n            \"validFrom\": \"2020-01-01\",\n            \"validTo\": \"2021-01-01\",\n            \"covers\": [\"C001\",\"C002\"],\n            \"type\": \"MEDI\"\n        },\n        \n        {\n            \"number\": \"P0003AZZ\",\n            \"rate\": 200.0,\n            \"validFrom\": \"2018-02-01\",\n            \"validTo\": \"2020-03-01\",\n            \"covers\": [\"C001\",\"C002\"],\n            \"type\": \"LIFE\"\n        },\n        \n        {\n            \"number\": \"P0001AZZ\",\n            \"rate\": 200.0,\n            \"validFrom\": \"2018-02-16\",\n            \"validTo\": \"2019-10-15\",\n            \"covers\": [\"C001\",\"C002\"],\n            \"type\": \"PET\"\n        }\n        ]\n}",
+                                "rules": [],
+                                "label": ""
+                            }
+                        ],
+                        "enabled": true
+                    },
+                    {
+                        "uuid": "",
+                        "documentation": "CalculationResultDto",
+                        "method": "get",
+                        "endpoint": "calculatePremium",
+                        "responses": [
+                            {
+                                "uuid": "",
+                                "body": "{\n    \"content\": {\n        \"premium\": {{float 100.00 10000.00 '0.00'}}\n    }\n}",
+                                "latency": 0,
+                                "statusCode": "200",
+                                "headers": [
+                                    {
+                                        "key": "",
+                                        "value": ""
+                                    }
+                                ],
+                                "filePath": "",
+                                "sendFileAsBody": false,
+                                "rules": [],
+                                "label": ""
+                            }
+                        ],
+                        "enabled": true
+                    }
+                ],
+                "proxyMode": false,
+                "proxyHost": "",
+                "https": false,
+                "cors": true,
+                "headers": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "lastMigration": 9
+            }
+        }
+    ]
+}

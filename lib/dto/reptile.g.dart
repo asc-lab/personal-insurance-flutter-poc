@@ -7,19 +7,11 @@ part of 'reptile.dart';
 // **************************************************************************
 
 ReptileDto _$ReptileDtoFromJson(Map<String, dynamic> json) {
-  return ReptileDto(
-      json['name'],
-      json['nickname'],
-      json['dateOfBirth'] == null
-          ? null
-          : DateTime.parse(json['dateOfBirth'] as String),
-      json['species'] as String,
-      json['hasTail'] as bool,
-      json['numberOfLegs'] as int);
+  return ReptileDto(json['name'], json['nickname'], json['dateOfBirth'] == null ? null : DateTime.parse(json['dateOfBirth'] as String),
+      json['species'] as String, json['hasTail'] as bool, json['numberOfLegs'] as int);
 }
 
-Map<String, dynamic> _$ReptileDtoToJson(ReptileDto instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$ReptileDtoToJson(ReptileDto instance) => <String, dynamic>{
       'name': instance.name,
       'nickname': instance.nickname,
       'dateOfBirth': instance.dateOfBirth?.toIso8601String(),
